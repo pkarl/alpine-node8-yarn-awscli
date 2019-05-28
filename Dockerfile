@@ -2,6 +2,7 @@ FROM mhart/alpine-node:8.15.1
 
 RUN apk -v --update add \
   python \
+  zip \
   py-pip \
   groff \
   less \
