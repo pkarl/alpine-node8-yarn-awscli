@@ -10,8 +10,7 @@ RUN apk -v --no-cache add \
   mailcap \
   git \
   && \
-  pip install --upgrade awsebcli \
-  apk -v --purge del py-pip && \
+  pip install --upgrade awsebcli && \
   rm /var/cache/apk/*
 
 VOLUME /root/.aws
