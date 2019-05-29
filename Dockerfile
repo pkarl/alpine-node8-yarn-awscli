@@ -1,14 +1,16 @@
 FROM mhart/alpine-node:8.15.1
 
-RUN apk -v --update add \
+RUN apk -v --no-cache add \
   python \
   zip \
   py-pip \
+  openssh-client \
   groff \
   less \
   mailcap \
+  git \
   && \
-  pip install --upgrade awscli==1.14.5 s3cmd==2.0.1 python-magic && \
+  pip install --upgrade awsebcli \
   apk -v --purge del py-pip && \
   rm /var/cache/apk/*
 
