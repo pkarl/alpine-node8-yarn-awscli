@@ -10,11 +10,8 @@ RUN apk -v --no-cache add \
   mailcap \
   git \
   && \
-  pip install --upgrade awsebcli && \
-  rm /var/cache/apk/*
+  pip install --upgrade awsebcli
 
 VOLUME /root/.aws
 VOLUME /project
 WORKDIR /project
-
-ENTRYPOINT ["aws"]
