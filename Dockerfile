@@ -1,16 +1,19 @@
-FROM mhart/alpine-node:12.16.1
+FROM mhart/alpine-node:12.16.1 
 
-RUN apk -v --no-cache add \
-  python \
-  zip \
-  py-pip \
+RUN apk add --no-cache --virtual .build-deps \
+  alpine-sdk \
+  libffi-dev \
+  libressl-dev \
   openssh-client \
+  zip \
   groff \
   less \
   mailcap \
   git \
-  && \
-  pip install --upgrade awsebcli
+  python2-dev \
+  py-pip \
+  && pip install --upgrade awsebcli \
+  && apk del .build-deps
 
 VOLUME /root/.aws
 VOLUME /project
