@@ -1,4 +1,4 @@
-FROM mhart/alpine-node:8.15.1
+FROM mhart/alpine-node:12.16.1
 
 RUN apk -v --no-cache add \
   python \
